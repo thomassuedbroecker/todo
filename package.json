@@ -1,18 +1,21 @@
 {
-  "name"         : "node-todo",
-  "version"      : "0.0.0",
-  "description"  : "Bluemix Node.JS todo application.",
+  "name": "node-todo",
+  "version": "0.0.0",
+  "description": "Bluemix Node.JS todo application.",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js",
+    "postinstall": "bower install --allow-root"
   },
-  "main"         : "server.js",
-  "author"       : "Lionel",
-  "dependencies" : {
-    "express"         : "~4.6.1",
-    "mongoose"        : "~3.8.13",
-    "morgan"          : "~1.1.1",
-    "body-parser"     : "~1.4.3",
-    "method-override" : "~2.1.1",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "~1.4.3",
+    "bower": "^1.7.7",
+    "cfenv": "^1.0.3",
+    "express": "~4.6.1",
+    "method-override": "~2.1.1",
+    "morgan": "~1.1.1",
+    "nano": "^6.2.0",
     "serve-favicon": "^2.3.0"
   }
 }

@@ -1,7 +1,6 @@
 applications:
-- name: node-todo
-  instances: 1
+- name: todo
+  services:
+  - todo-cloudant
   memory: 256M
-  disk_quota: 1024M
-  path: .
-  domain: eu-gb.mybluemix.net
+  random-route: true

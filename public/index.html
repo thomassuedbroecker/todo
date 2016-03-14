@@ -1,93 +1,79 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="bluemixTodo">
+<html ng-app="todoApp">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Optimize mobile viewport -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Optimize mobile viewport -->
 
-    <title>Todo App</title>
+  <title>Todo App</title>
 
-    <!-- load bootstrap -->
-    <!-- link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" -->
-	<link rel="stylesheet" href="framework/bootstrap/3.3.6/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
-		#todo-list 				{ margin-bottom:30px; }
-		#todo-form 	 			{ margin-bottom:50px; }
-	</style>
-
+  <!-- load bootstrap -->
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/todo.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </head>
 
 <!-- SET THE CONTROLLER -->
+
 <body ng-controller="mainController">
-    
-    <div class="container">
 
-        <!-- HEADER AND TODO COUNT -->
-        <div class="jumbotron text-center">
-            <h1>Bluemix Todos <span class="label label-info">{{ todos.length }}</span></h1>
-        </div>
+  <div class="container">
 
-        <!-- TODO LIST -->
-        <div id="todo-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-
-
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox" ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                    </label>
-                </div>
-
-                <p class="text-center" ng-show="loading">
-                    <span class="fa fa-spinner fa-spin fa-3x"></span>
-                </p>
-
-            </div>
-        </div>
-
-        <!-- FORM TO CREATE TODOS -->
-        <div id="todo-form" class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form>
-                    <div class="form-group">
-
-                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <input type="text" class="form-control input-lg text-center" placeholder="Add a new todo" ng-model="formData.text">
-                    </div>
-
-                    <!-- createToDo() WILL CREATE NEW TODOS -->
-                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="text-center text-muted">
-            <p>A demo by <a href="https://twitter.com/lionelmace">Lionel</a>.</p>
-        </div>
-
+    <!-- HEADER AND TODO COUNT -->
+    <div class="jumbotron text-center">
+      <h1><span class="label label-info">{{ todos.length }}</span> Todos</h1>
     </div>
-    
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script -->
-    <script src="framework/angularjs/1.4.9/angular.min.js"></script>
-    <!-- load up our controller -->
-    <script src="js/controllers/main.js"></script>
-    
-    <!-- load our todo service -->
-    <script src="js/services/todos.js"></script>
-     <!-- load our main application -->
-    <script src="js/core.js"></script>
 
+    <!-- TODO LIST -->
+    <div id="todo-list" class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+
+
+        <!-- LOOP OVER THE TODOS IN $scope.todos -->
+        <div class="checkbox" ng-repeat="todo in todos">
+          <label>
+            <input type="checkbox" ng-click="deleteTodo(todo)"> {{ todo.text }}
+          </label>
+        </div>
+
+        <p class="text-center" ng-show="loading">
+          <span class="fa fa-spinner fa-spin fa-3x"></span>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- FORM TO CREATE TODOS -->
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form data-toggle="validator">
+          <div class="form-group">
+
+            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+            <input type="text" class="form-control input-lg text-center"
+                   placeholder="Add a new todo" ng-model="formData.text" required>
+          </div>
+
+          <!-- createToDo() WILL CREATE NEW TODOS -->
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <!-- load our todo service -->
+  <script src="js/services/todo.service.js"></script>
+  <!-- load up our controller -->
+  <script src="js/controllers/todo.controller.js"></script>
+  <!-- load our main application -->
+  <script src="js/todo.js"></script>
 </body>
 
 </html>
