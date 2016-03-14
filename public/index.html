@@ -27,11 +27,25 @@
       <h1><span class="label label-info">{{ todos.length }}</span> Todos</h1>
     </div>
 
+    <!-- FORM TO CREATE TODOS -->
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form data-toggle="validator" class="form-inline">
+          <div class="form-group">
+
+            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+            <input type="text" class="form-control input-lg text-center" placeholder="Add a new todo" ng-model="formData.text" required>
+
+            <!-- createToDo() WILL CREATE NEW TODOS -->
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- TODO LIST -->
     <div id="todo-list" class="row">
       <div class="col-sm-4 col-sm-offset-4">
-
-
         <!-- LOOP OVER THE TODOS IN $scope.todos -->
         <div class="checkbox" ng-repeat="todo in todos">
           <label>
@@ -42,32 +56,20 @@
         <p class="text-center" ng-show="loading">
           <span class="fa fa-spinner fa-spin fa-3x"></span>
         </p>
-
-      </div>
-    </div>
-
-    <!-- FORM TO CREATE TODOS -->
-    <div id="todo-form" class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
-        <form data-toggle="validator">
-          <div class="form-group">
-
-            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-            <input type="text" class="form-control input-lg text-center"
-                   placeholder="Add a new todo" ng-model="formData.text" required>
-          </div>
-
-          <!-- createToDo() WILL CREATE NEW TODOS -->
-          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-        </form>
       </div>
     </div>
 
   </div>
 
+
+  <footer>
+    made by <a href="https://twitter.com/lionelmace">lionel</a> and <a href="https://twitter.com/l2fprod">fred</a>
+  </footer>
+
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <script src="vendor/angular/angular.min.js"></script>
+
   <!-- load our todo service -->
   <script src="js/services/todo.service.js"></script>
   <!-- load up our controller -->
