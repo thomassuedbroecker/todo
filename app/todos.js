@@ -23,7 +23,7 @@ module.exports = function (app, todoDb) {
   });
 
   // create todo and send back all todos after creation
-  app.post('/api/todos', function (req, res) {
+  app.put('/api/todos', function (req, res) {
     todoDb.insert({
       type: "todo",
       text: req.body.text,

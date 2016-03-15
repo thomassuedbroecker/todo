@@ -8,7 +8,7 @@ angular.module('todoService', [])
       return $http.get('/api/todos');
     },
     create: function (todoData) {
-      return $http.post('/api/todos', todoData);
+      return $http.put('/api/todos', todoData);
     },
     delete: function (todo) {
       return $http.delete('/api/todos/' + todo._id + "?rev=" + todo._rev);
