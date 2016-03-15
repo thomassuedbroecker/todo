@@ -2,6 +2,8 @@
 
 This is a sample application built with Node.JS and IBM Cloudant.
 
+**If you are looking for the step-by-step tutorial, look at [this branch](https://github.com/lionelmace/node-todo/tree/tutorial).**
+
 ![Todo](screenshot.png)
 
 [![Deploy to Bluemix](http://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
