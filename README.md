@@ -1,6 +1,6 @@
 # Todo App Tutorial
 
-This is a sample application built with Node.JS and IBM Cloudant.
+This is a sample application built with a CLEAN stack (CLoudant NoSQL database, Express, Angular and Node.js).
 
 **If you are looking for the step-by-step tutorial, look at [this branch](https://github.com/lionelmace/node-todo/tree/tutorial).**
 
@@ -96,4 +96,4 @@ This is a sample application created for the purpose of demonstration and learni
 The program is provided as-is with no warranties of any kind, express or implied.
 
 [bluemix_signup_url]: https://console.ng.bluemix.net/?cm_mmc=GitHubReadMe-_-BluemixSampleApp-_-Node-_-Workflow
-[cloud_foundry_url]: https://github.com/cloudfoundry/cli
+[cloud_foundry_url]: https://github.com/cloudfoundry/cli/releases
