@@ -16,6 +16,13 @@ module.exports = function (app, todoDb) {
     });
   }
 
+  //kill instance
+  app.get('/api/kill', function (req, res) {
+    process.exit();
+    res.json({ message: 'kill test' });
+
+  });
+
   // api ---------------------------------------------------------------------
   // get all todos
   app.get('/api/todos', function (req, res) {

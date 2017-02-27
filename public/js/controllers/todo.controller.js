@@ -14,6 +14,19 @@ angular.module('todoController', [])
       $scope.loading = false;
     });
 
+
+  // KILL ====================================================================
+  $scope.killInstance = function () {
+    Todos.kill()
+
+    .success(function () {
+      console.log('killed?');
+    })
+    .error( function () {
+      console.log('error?');
+    });;
+  };
+
   // CREATE ==================================================================
   // when submitting the add form, send the text to the node API
   $scope.createTodo = function () {

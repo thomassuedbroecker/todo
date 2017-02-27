@@ -27,7 +27,7 @@
 
     <!-- HEADER AND TODO COUNT -->
     <div class="jumbotron text-center">
-      <h1><span class="label label-info">{{ todos.length }}</span>My Todos</h1>
+      <h1><span class="label label-info">{{ todos.length }}</span>Todos</h1>
     </div>
 
     <!-- FORM TO CREATE TODOS -->
@@ -60,6 +60,11 @@
           <span class="fa fa-spinner fa-spin fa-3x"></span>
         </p>
       </div>
+    </div>
+
+    <div>
+      <!-- kill button-->
+      <button type="submit" class="btn btn-primary btn-lg" ng-click="killInstance()">Kill</button>
     </div>
 
   </div>

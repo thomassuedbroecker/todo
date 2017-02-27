@@ -1,9 +1,14 @@
 angular.module('todoService', [])
 
 // super simple service
-// each function returns a promise object 
+// each function returns a promise object
 .factory('Todos', ['$http', function ($http) {
   return {
+    kill: function () {
+      console.log('killing');
+      var retres = $http.get('/api/kill');
+      return retres;
+    },
     get: function () {
       return $http.get('/api/todos');
     },
