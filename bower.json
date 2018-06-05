@@ -1,6 +1,6 @@
 {
   "name": "node-todo",
-  "description": "Bluemix Node.JS todo application.",
+  "description": "IBM Cloud Node.JS todo application.",
   "main": "server.js",
   "authors": [
     "Lionel"

@@ -13,33 +13,34 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
 1. Create a Bluemix Account
 
     [Sign up][bluemix_signup_url] for Bluemix, or use an existing account.
-    
+
 1. Download and install the [Cloud-foundry CLI][cloud_foundry_url] tool
 
 1. Clone the app to your local environment from your terminal using the following command
 
   ```
-  git clone https://github.com/lionelmace/node-todo
+  git clone https://github.com/thomassuedbroecker/todo.git
   ```
 
 1. cd into this newly created directory
 
-1. Connect to Bluemix in the command line tool and follow the prompts to log in.
+1. Connect to IBM Cloud in the command line tool and follow the prompts to log in.
+   _Note:_ Optional with -sso
 
 	```
-	$ cf login
+	$  bx login -a https://api.eu-de.bluemix.net
 	```
-    
-1. Create the Cloudant service in Bluemix.
+
+1. Create the Cloudant service in IBM Cloud.
 
   ```
-  $ cf create-service cloudantNoSQLDB Shared todo-cloudant
+  $ bx cf create-service cloudantNoSQLDB Shared todo-cloudant
   ```
 
-1. Push the application to Bluemix.
+1. Push the application to IBM Cloud.
 
   ```
-  $ cf push
+  $ bx cf push
   ```
 
 And voila! You now have your very own instance of the Todo application running on Bluemix.
