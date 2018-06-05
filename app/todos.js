@@ -17,6 +17,7 @@ module.exports = function (app, todoDb) {
   }
 
   //kill instance
+  //http://stackabuse.com/how-to-exit-in-node-js/
   app.get('/api/kill', function (req, res) {
     process.exit();
     res.json({ message: 'kill test' });

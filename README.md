@@ -31,7 +31,7 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
 	$  bx login -a https://api.eu-de.bluemix.net
 	```
 
-1. Create the Cloudant service in IBM Cloud.
+1. Create the Cloudant service in IBM Cloud and bind to Cloud Foundry App
 
   ```
   $ bx cf create-service cloudantNoSQLDB Shared todo-cloudant
@@ -41,6 +41,16 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
 
   ```
   $ bx cf push
+  ```
+
+1. Watch the logs of the application in IBM Cloud.
+  ```
+  $ bx cf logs todo
+  ```
+
+1. Get the number of app instances in IBM Cloud.
+  ```
+  $ bx cf apps
   ```
 
 And voila! You now have your very own instance of the Todo application running on Bluemix.
