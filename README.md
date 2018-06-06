@@ -27,9 +27,9 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
 1. Connect to IBM Cloud in the command line tool and follow the prompts to log in.
    _Note:_ Optional with -sso
 
-	```
-	$  bx login -a https://api.eu-de.bluemix.net
-	```
+   ```
+   $  bx login -a https://api.eu-de.bluemix.net
+   ```
 
 1. Create the Cloudant service in IBM Cloud and bind to Cloud Foundry App
 
