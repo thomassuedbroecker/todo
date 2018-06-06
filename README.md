@@ -56,6 +56,8 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
 And voila! You now have your very own instance of the Todo application running on Bluemix.
 Navigate to the application url, e.g. `<application-host>.mybluemix.net` to create Todo.
 
+_Note:_ You can change the color of the kill button, with the _<btn btn-danger btn-lg>_ statement inside the *public/index.html* in line 67.
+
 ## Running the app locallly
 
 You can run the application locally, connecting to the Cloudant service running in IBM Bluemix.
