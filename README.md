@@ -1,18 +1,19 @@
-# Todo App Tutorial
+# Todo App Tutorial (Customized)
 
 This is a sample application built with a CLEAN stack (CLoudant NoSQL database, Express, Angular and Node.js).
 
-**If you are looking for the step-by-step tutorial, look at [this branch](https://github.com/lionelmace/node-todo/tree/tutorial).**
+**If you are looking for the ORIGINAL step-by-step tutorial, look at [this branch](https://github.com/lionelmace/node-todo/tree/tutorial).**
 
 ![Todo](screenshot.png)
 
-[![Deploy to Bluemix](http://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
+This version contains some changes related to autoscaling service.
+You can watch the german YouTube playlist: https://www.youtube.com/watch?v=bu_7eYvRJmY&list=PLUte4WEyMEjVPJ0mESXM4jgQvYlEmUwCF
 
-## Running the app on Bluemix
+## Running the app on IBM Cloud
 
-1. Create a Bluemix Account
+1. Create a **IBM Cloud** Account
 
-    [Sign up][bluemix_signup_url] for Bluemix, or use an existing account.
+    [Sign up][bluemix_signup_url] for IBM Cloud, or use an existing account.
 
 1. Download and install the [Cloud-foundry CLI][cloud_foundry_url] tool
 
@@ -53,16 +54,16 @@ This is a sample application built with a CLEAN stack (CLoudant NoSQL database, 
   $ bx cf apps
   ```
 
-And voila! You now have your very own instance of the Todo application running on Bluemix.
+And voila! You now have your very own instance of the Todo application running on IBM Cloud.
 Navigate to the application url, e.g. `<application-host>.mybluemix.net` to create Todo.
 
 _Note:_ You can change the color of the kill button, with the *btn btn-danger btn-lg* statement inside the *public/index.html* in line 67.
 
-## Running the app locallly
+## Running the app locally
 
-You can run the application locally, connecting to the Cloudant service running in IBM Bluemix.
+You can run the application locally, connecting to the Cloudant service running in IBM CLoud.
 To do so you need we will create one file to store the Cloudant credentials.
-These credentials can be retrieved in the IBM Bluemix dashboard.
+These credentials can be retrieved in the IBM IBM Cloud dashboard.
 
 To run the application locally, you will need:
   * [NodeJS](http://nodejs.org)

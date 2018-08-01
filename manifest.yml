@@ -1,7 +1,7 @@
 declared-services:
   todo-cloudant:
     label: cloudantNoSQLDB
-    plan: Shared
+    plan: Lite
 applications:
 - name: todo
   services:

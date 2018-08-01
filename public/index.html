@@ -26,8 +26,9 @@
   <div class="container">
 
     <!-- HEADER AND TODO COUNT -->
+    <!-- ******** CHANGE OF THE INFO ***** -->
     <div class="jumbotron text-center">
-      <h1><span class="label label-info">{{ todos.length }}</span>My Todos</h1>
+      <h1><span class="label label-info">{{ todos.length }}</span> My todos in 2018</h1>
     </div>
 
     <!-- FORM TO CREATE TODOS -->
@@ -62,9 +63,12 @@
       </div>
     </div>
 
+
+
+
     <div>
-	<!-- kill button-->
-      <button type="submit" class="btn btn-primary btn-lg" ng-click="killInstance()">
+	     <!-- kill button-->
+      <button type="submit" class="btn btn-danger btn-lg" ng-click="killInstance()">
         <span class="glyphicon glyphicon-alert"></span> Kill
       </button>
     </div>

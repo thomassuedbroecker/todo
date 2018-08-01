@@ -1,0 +1,51 @@
+#!/bin/bash
+#appname: "todo-YOUR_ID-UK"
+
+echo "--- Set Variables"
+echo "*****************"
+
+#API-ENDPOINT=api.eu-gb.bluemix.net
+#IBMCLOUD-CLI-DEVOPS-PLATFORM-KEY="YOUR_KEY"
+#USER-ID="YOUR@ID.com"
+#RESOURCE-GROUP="default"
+#ORGANIZATION-NAME="YOUR_ORG"
+#SPACE-NAME="YOUR_SPACE"
+
+echo "--- Set API Endpoint for IBM Cloud cli"
+echo "**************"
+# bx api https://api.eu-gb.bluemix.net
+bx login -u $USER-ID -apikey $IBMCLOUD-CLI-DEVOPS-PLATFORM-KEY -o $ORGANIZATION-NAME -s $SPACE-NAME -g $RESOURCE-GROUP -a $API-ENDPOINT
+bx info
+
+echo "--- Clear cloudfoundry space ---"
+
+echo "**************"
+echo "--- Delete CF App ---"
+cf delete "todo-tsuedbroecker-UK" -r -f
+echo "--- Delete Cloudant ---"
+cf delete-service todo-cloudant -f
+echo "--- Delete autoscaling ---"
+cf delete-service todo-auto-scaling -f
+
+echo "--- Create ---"
+echo "**************"
+# echo "--- List available Services ---"
+# cf marketplace
+
+echo "--- Create Cloudant ---"
+cf create-service cloudantNoSQLDB Lite todo-cloudant
+# bx iam service-id todo-cloudant
+# bx iam service-id-create todo-cloudant -d 'todo-cloudant-service-id-test'
+
+echo "--- Auto-Scaling ---"
+cf create-service Auto-Scaling free todo-auto-scaling
+
+echo "--- Push application with concrete name ---"
+cf push "${CF_APP}"
+
+echo "--- Auto-Scaling bind to App ---"
+cf bind-service "${CF_APP}" todo-auto-scaling -c '{"permissions":"read-only"}'
+
+# Test API: https://YOU-IBMCLOUD-URL/api/todos
+# Header: [{"key":"Content-Type","value":"application/json","description":""}]
+# JSON: { "text" : "Availability test message"}
